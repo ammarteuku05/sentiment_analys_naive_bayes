@@ -211,7 +211,7 @@ corpus.clean<-corpus%>%
     tm_map(content_transformer(tolower))%>%
     tm_map(removePunctuation)%>%
     tm_map(removeNumbers)%>%
-    tm_map(removeWords,stopwords())%>%
+    tm_map(removeWords,stopwords(kind="en"))%>%
     tm_map(stripWhitespace)
 dtm<-DocumentTermMatrix(corpus.clean)
 inspect(dtm[1:10,1:20])
